@@ -20,7 +20,6 @@ with st.container():
     data_center = bot_col1.slider('Data Center', min_value=0, max_value=100)
     bot_behavior = bot_col2.slider('Bot Behavior', min_value=0, max_value=100)
     network_detection = bot_col3.slider('Network Detection', min_value=0, max_value=100)
-    submit1 = st.button('Submit')
 
 if st.session_state['bot_probabilty_weight']:
     weights = np.array([0.33, 0.33, 0.33])
@@ -58,7 +57,7 @@ with st.container():
     st.text_input('Number of accounts')
 
 
-submit = st.button('SUBMIT!')
+submit = st.button('Analyse!')
 if submit:
     st.session_state['bot_probabilty_weight'] = True
     st.session_state['general_risk_probabilty'] = True
