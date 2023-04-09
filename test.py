@@ -106,7 +106,7 @@ item = {
     'General Risk Propability': st.session_state['general_risk_probabilty']
 }
 with st.container():
-    s.subheader('Table')
+    st.subheader('Data')
     df = pd.DataFrame(item, index=[0])
     st.dataframe(df)
 
