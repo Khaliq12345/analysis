@@ -35,8 +35,8 @@ if st.session_state['submit_now']:
     #specifying the figure to plot 
     fig, ax = plt.subplots(figsize=(8,4), facecolor='w')
     ax.hist(a, bins=[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
-    ax.axvline(st.session_state['real'], color='g', linestyle='dashed', linewidth=1)
-    ax.axvline(st.session_state['suspicious'], color='orange', linestyle='dashed', linewidth=1)
+    ax.axvline(st.session_state['real'], color='g', linewidth=7.0)
+    ax.axvline(st.session_state['suspicious'], color='orange', linewidth=7.0)
     #plotting the figure
     st.pyplot(fig)
 
