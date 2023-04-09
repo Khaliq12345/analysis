@@ -30,7 +30,7 @@ def weight_average(array, weights):
 if submit:
     st.session_state['submit_now'] = True
 if st.session_state['submit_now']:
-    s.subheader('GRAPH')
+    st.subheader('GRAPH')
     #creating a sample array
     a = np.array([st.session_state['bot_probabilty_weight'], st.session_state['general_risk_probabilty']])
     #specifying the figure to plot 
