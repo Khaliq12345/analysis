@@ -43,7 +43,9 @@ if st.session_state['submit_now']:
 
     zerofake_score = np.round(0.33*st.session_state['bot_probabilty_weight'] + 0.33*st.session_state['general_risk_probabilty'], 4)
     st.session_state['zerofake_score'] = zerofake_score
-
+    
+space()
+space()
 with st.container():
     st.subheader('Fake User Thresholds')
     thres_col1, thres_col2, thres_col3 = st.columns([1,1,1])
@@ -53,7 +55,18 @@ with st.container():
     st.session_state['suspicious'] = suspicious/100
     #fake = thres_col3.slider('Fake', min_value=0, max_value=100, value=100)
     #st.session_state['fake'] = fake/100
-
+    
+space()
+space()
+with st.container():
+    st.subheader('Fake User Factors')
+    bot_col1, bot_col2, bot_col3 = st.columns([1,1,1])
+    bot_probability = bot_col1.slider('Bot Probability', min_value=0, max_value=100, value=int(100*float(st.session_state['bot_probabilty_weight'])))
+    multi_account_probability = bot_col2.slider('Multi-Account Probability', min_value=0, max_value=100, value=1*100)
+    general_risk_probability = bot_col3.slider('General Risk Probability', min_value=0, max_value=100, value=int(100*float(st.session_state['general_risk_probabilty'])))
+    
+space()
+space()
 with st.container():
     st.subheader('Bot Probability')
     bot_col1, bot_col2, bot_col3 = st.columns([1,1,1])
@@ -67,7 +80,9 @@ if st.session_state['submit_now']:
     bot_probabilty_weight = weight_average(array, weights)
     st.session_state['bot_probabilty_weight'] = bot_probabilty_weight
     st.write(st.session_state['bot_probabilty_weight'])
-
+    
+space()
+space()
 with st.container():
     st.subheader('General Risk Probability')
     geo_col1, geo_col2, geo_col3 = st.columns([1,1,1])
@@ -94,6 +109,8 @@ if st.session_state['submit_now']:
     st.session_state['general_risk_probabilty'] = gr_probabilty_weight
     st.write(st.session_state['general_risk_probabilty'])
 
+space()
+space()
 with st.container():
     st.subheader('Multi-Accounting')
     st.text_input('Number of accounts')
@@ -106,6 +123,9 @@ item = {
     'Mult-accounting Probability': 1,
     'General Risk Propability': st.session_state['general_risk_probabilty']
 }
+
+space()
+space()
 with st.container():
     st.subheader('Data')
     df = pd.DataFrame(item, index=[0])
