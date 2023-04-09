@@ -50,8 +50,8 @@ with st.container():
     st.session_state['real'] = real/100
     suspicious = thres_col2.slider('Suspicious', min_value=0, max_value=100, value=85)
     st.session_state['suspicious'] = suspicious/100
-    fake = thres_col3.slider('Fake', min_value=0, max_value=100, value=100)
-    st.session_state['fake'] = fake/100
+    #fake = thres_col3.slider('Fake', min_value=0, max_value=100, value=100)
+    #st.session_state['fake'] = fake/100
 
 with st.container():
     st.subheader('Bot Probability')
